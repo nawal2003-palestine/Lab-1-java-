@@ -1,0 +1,21 @@
+//exo5:
+	
+import java.util.Scanner;
+
+public class SumEvenNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+
+        System.out.println("Enter integers one by one (enter a non-integer to finish):");
+        while (scanner.hasNextInt()) {
+            int num = scanner.nextInt();
+            if (num % 2 == 0) {
+                sum += num;
+            }
+        }
+
+        System.out.println("Sum of even numbers: " + sum);
+        scanner.close();
+    }
+}
