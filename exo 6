@@ -1,0 +1,36 @@
+//exo6: comme exercice 4 
+	
+import java.util.Scanner;
+
+public class PrimeNumbersInRange {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("Enter the start of the range: ");
+        int start = scanner.nextInt();
+
+        System.out.print("Enter the end of the range: ");
+        int end = scanner.nextInt();
+
+        System.out.println("Prime numbers between " + start + " and " + end + ":");
+
+        
+        for (int num = start; num <= end; num++) {
+            if (isPrime(num)) {
+                System.out.print(num + " ");
+            }
+        }
+
+        scanner.close();
+    }
+
+    // Méthode pour vérifier si un nombre est premier
+    public static boolean isPrime(int n) {
+        if (n < 2) return false; // Un nombre inférieur à 2 n'est pas premier
+        for (int i = 2; i <= Math.sqrt(n); i++) { // Vérifier jusqu'à la racine carrée de n
+            if (n % i == 0) return false; // Si divisible par i, ce n'est pas un nombre premier
+        }
+        return true;
+    }
+}
